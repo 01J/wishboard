@@ -1,0 +1,11 @@
+class PagesController < ApplicationController
+  def aboutus
+	@hello = 'Hi there!'
+  end
+
+  def contacts
+  end
+
+  def news
+  end
+end

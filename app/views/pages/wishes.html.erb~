@@ -1,0 +1,18 @@
+<div class="page-header">
+<h1>Wishboard - дошка жаданняў</h1>
+</div>
+<div class="jumbotron">
+<p>Гэта праект для пошуку тых, хто можа вам дапамагчы ў выкананні вашых жаданняў.</p>
+<p>
+  Гэта спасылка на знешні рэсурс.
+  <a href="https://github.com/micrum/course" target="_blank">course</a>
+</p>
+</div>
+<p>
+<%= image_tag 'kotik.jpg', height: 300, alt: 'kot', class: "img-thumbnail cat" %>
+</p>
+<div class="page-header">
+<h1>Жаданні</h1>
+</div>
+<p>Раздзел для публікацыі вашых жаданняў.</p>
+

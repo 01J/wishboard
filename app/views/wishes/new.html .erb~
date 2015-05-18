@@ -1,0 +1,7 @@
+<div class="page-header">
+  <h2><%= @wish.user_name %></h2>
+  <q><%= @wish.feedback %></q>
+</div>
+
+
+

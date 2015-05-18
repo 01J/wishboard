@@ -1,0 +1,16 @@
+<div class="page-header">
+  <h1>New wish</h1>
+</div>
+
+<%= form_for(@wish) do |f| %>
+
+  <%= f.label :user_name %>
+  <%= f.text_field :user_name %>
+
+  <%= f.label :feedback %>
+  <%= f.text_field :feedback %>
+
+  <%= f.submit 'Create wish', class: 'btn btn-large btn-primary' %>
+<% end %>
+
+

@@ -1,0 +1,12 @@
+class WishesController < ApplicationController
+  def index
+  end
+
+  def new
+    @wish = Wish.new
+  end
+
+  def show
+    @wish = Wish.find(params[:id])
+  end
+end

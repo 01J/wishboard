@@ -1,0 +1,18 @@
+<%= form_for @wish, html: {class: 'form-horizontal center'} do |f| %>
+
+    <div class="form-group">
+      <%= f.label :Імя, class: 'col-md-4 control-label' %>
+      <div class="col-md-6">
+        <%= f.text_field :Імя, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :Жаданне, class: 'col-md-4 control-label' %>
+      <div class="col-md-6">
+        <%= f.text_area :Жаданне, class: 'form-control' %>
+      </div>
+    </div>
+
+    <%= f.submit 'Create wish', class: 'btn btn-large btn-primary' %>
+<% end %>
