@@ -1,5 +1,7 @@
 class WishesController < ApplicationController
+before_action :authorize, only: :destroy
   def index
+     @wishes = Wish.paginate(:page => params[:page], :per_page => 4)
   end
 
   def new
@@ -17,7 +19,13 @@ class WishesController < ApplicationController
   else
     render 'new'
   end
+
+  def destroy
+    Wish.find(params[:id]).destroy
+    redirect_to wishes_url
+  end
 end
+
 
 private
 

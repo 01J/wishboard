@@ -1,0 +1,17 @@
+<nav class="navbar navbar-inverse">
+  <ul class="nav navbar-nav">
+	<li><%= link_to 'Галоўная', root_path %></li>
+	<li><%= link_to 'Пра нас', aboutus_path %></li>
+	<li><%= link_to 'Навіны', news_path %></li>
+	<li><%= link_to 'Кантакты', contacts_path %></li>
+  </ul>
+
+  <% if session[:mentor_id] %>
+      <ul class="nav navbar-nav pull-right">
+        <li><%= link_to 'Admin', mentor_path %></li>
+        <li><%= button_to 'Logout', logout_path, method: :delete, class: 'btn navbar-btn' %></li>
+      </ul>
+  <% else %>
+      <%= link_to 'Login', login_path, class: 'btn btn-default navbar-btn pull-right' %>
+  <% end %>
+</nav>

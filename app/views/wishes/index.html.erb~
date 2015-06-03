@@ -1,9 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<div class = 'page-header'>
-<h1>Жаданні</h1>
-</div>
-<p>Гэты раздзел прысвечаны публікацыі вашых жаданняў.</p>
-
-
+.page-header
+  h1 Wishboard - дошка жаданняў
+.jumbotron
+  p Гэта праект для пошуку тых, хто можа вам дапамагчы ў выкананні вашых жаданняў.
+.page-header
+  h1 Жаданні
+p Раздзел для публікацыі вашых жаданняў.
+.panel.panel-default
+  .panel-body
+    = link_to 'Add new wish', new_wish_path, class: 'btn btn-primary btn-lg' %
+.list-group
+  = render @wishes 
 

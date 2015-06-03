@@ -2,15 +2,33 @@
   <h1>New wish</h1>
 </div>
 
-<%= form_for(@wish) do |f| %>
+<%= form_for @wish, html: {class: 'form-horizontal center'} do |f| %>
 
-  <%= f.label :user_name %>
-  <%= f.text_field :user_name %>
+  <div class="form-group">
+      <%= f.label :user_name, class: 'col-md-4 control-label' %>
+      <div class="col-md-6">
+        <%= f.text_field :user_name, class: 'form-control' %>
+      </div>
+    </div>
 
-  <%= f.label :feedback %>
-  <%= f.text_field :feedback %>
+    <div class="form-group">
+      <%= f.label :feedback, class: 'col-md-4 control-label' %>
+      <div class="col-md-6">
+        <%= f.text_area :feedback, class: 'form-control' %>
+      </div>
+    </div>
 
-  <%= f.submit 'Create wish', class: 'btn btn-large btn-primary' %>
+    <%= f.submit 'Create wish', class: 'btn btn-large btn-primary' %>
+
+  <% if @wish.errors.any? %>
+    <div class="alert alert-danger">
+      <b><%= pluralize(@wish.errors.count, "error") %> on form.</b>
+      <ul>
+        <% @wish.errors.full_messages.each do |message| %>
+          <li>* <%= message %></li>
+        <% end %>
+      </ul>
+  </div>
+
 <% end %>
-
-
+<% end %>

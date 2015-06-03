@@ -15,6 +15,10 @@ gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
+gem "slim-rails"
+
+gem 'will_paginate', '~> 3.0.6'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -54,7 +58,9 @@ group :production do
   gem 'rails_12factor'
 end
 
-
+group :test do
+  gem 'factory_girl_rails', '4.2.1'
+end
 
 gem 'bundler', '~> 1.8.4'
 

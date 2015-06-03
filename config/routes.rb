@@ -2,6 +2,8 @@ Rails.application.routes.draw do
  
 
 
+  get 'users/new'
+
   root 'wishes#index'
 
   get 'contacts' => 'pages#contacts'
@@ -12,8 +14,25 @@ Rails.application.routes.draw do
 
   get 'wishes' => 'pages#wishes'
 
+  get 'mentor' => 'mentor#index'
 
-resources :wishes, only: [:index, :new, :show, :create]
+  controller :sessions do
+    get  'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+
+
+resources :wishes, only: [:index, :new, :show, :create, :destroy]
+
+resources :users, only: [:index, :new, :show, :create, :destroy]
+match '/signup',  to: 'users#new',            via: 'get'
+
+resources :sessions, only: [:new, :create, :destroy]
+
+  match '/signup',  to: 'users#new',            via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
 
 
 

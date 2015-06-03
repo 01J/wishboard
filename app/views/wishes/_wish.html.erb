@@ -1,0 +1,9 @@
+<a href="<%= wish_path(wish) %>" class="list-group-item">
+  <blockquote>
+    <p><%= wish.feedback %></p>
+    <footer>
+      <%= wish.user_name %>
+      <span><%= time_ago_in_words(wish.created_at) %> ago</span>
+    </footer>
+  </blockquote>
+</a>

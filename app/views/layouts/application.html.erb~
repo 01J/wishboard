@@ -7,12 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="container text-center">
 <%= render 'shared/header' %>
-
+<div class="container text-center">
 
 <%= yield %>
 
+<%= will_paginate @wishes %>
+
 </div>
+<%= render 'shared/footer' %>
 </body>
 </html>
